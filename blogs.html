@@ -11,70 +11,74 @@
 body {
   font-family: Arial;
   padding: 20px;
-  background: #373A52;
+  background: #f6f6f2;
 }
 
 /* Header/Blog Title */
 .header {
-  padding: 30px;
-  font-size: 40px;
+  padding: 25px;
+  font-size: 30px;
+  font-family: optima;
   text-align: center;
-  background: #A3B6DD;
-}
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 100%;
-}
-
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-}
-
-/* Fake image */
-.fakeimg {
-  background: #A3B6DD;
-  width: 100%;
-  padding: 20px;
+  background: #6fb3b8;
 }
 
 /* Add a card effect for articles */
 .card {
-   background: #A3B6DD;
+   background: #badfe7;
    padding: 20px;
    margin-top: 20px;
 }
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+#navbar {
+  overflow: hidden;
+  background-color: #388087;
 }
 
-/* Footer */
-.footer {
-  padding: 20px;
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
   text-align: center;
-  background: #A3B6DD;
-  margin-top: 20px;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: Impact; 
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
 }
 </style>
 </head>
 <body>
+
+<div id="navbar">
+  <a href="C:\Users\USER\Documents\PILIMUN\ACT2C\2nd Sem\WEB TECH 2\Home.html">Home</a>
+  <a href="C:\Users\USER\Documents\PILIMUN\ACT2C\2nd Sem\WEB TECH 2\Blogs.html">Blogs</a>
+  <a href="C:\Users\USER\Documents\PILIMUN\ACT2C\2nd Sem\WEB TECH 2\StudentNumber.html">People</a>
+</div>
 
 <div class="header">
   <h2>Top 3 Technology Blogs You Must Subscribe to in 2022</h2>
@@ -123,8 +127,21 @@ body {
      <p><strong>Recode</strong> is uncovering and explaining how our tech world is changing by focusing on the businesses of Silicon Valley. Its founder Kara Swisher has all the connections to the latest&nbsp;tech tips and products, making it a robust technology blog to read!</p>
     </div>
     </div>
+   <script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
    
-  </div>
 </div>
 
 </body>
